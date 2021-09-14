@@ -1,5 +1,8 @@
 const express = require('express');
 const logger = require('morgan');
+const router = require('./routes/apiRoutes.js');
+const views = require('./routes/views.js');
+
 const mongoose = require('mongoose');
 
 const PORT = 3000;
@@ -19,7 +22,9 @@ mongoose.connect('mongodb://localhost/workout', {
   useUnifiedTopology: true,
 });
 
-app.use(require("./routes/views.js"))
+app.use(router);
+
+app.use(views)
 
 app.listen(PORT, () => {
     console.log(`App running on port ${PORT}!`);

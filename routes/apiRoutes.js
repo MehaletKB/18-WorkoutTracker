@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const Workout = require("../models").Workout;
 
-router.get('/api/workouts', (req, res) => {
+router.get('/api', (req, res) => {
     Workout.find()
     .then(workouts => res.json(workouts))
     .catch(err => res.json(err));

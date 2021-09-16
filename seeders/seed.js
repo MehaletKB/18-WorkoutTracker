@@ -5,8 +5,9 @@ mongoose.connect(
   process.env.DB_CLIENT_URL || "mongodb://localhost/workout", 
   {
     useNewUrlParser: true,
-    useFindAndModify: false,
     useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false
   }
 );
 
